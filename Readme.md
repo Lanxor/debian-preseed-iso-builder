@@ -4,21 +4,27 @@
 
 ## How to Use It?
 
-1. Download the Debian netinst or DVD ISO file and place it at the root of the project directory.
-2. Set hash password output of the following command in `preseed.cfg` file at root account password.
+1. Install dependencies
+
+    ```sh
+    sudo apt install -y genisoimage
+    ```
+
+2. Download the Debian netinst or DVD ISO file and place it at the root of the project directory.
+3. Set hash password output of the following command in `preseed.cfg` file at root account password.
 
     ```sh
     sudo apt install -y whois
     mkpasswd -m sha256crypt
     ```
 
-3. Run the Makefile with the following command:
+4. Run the Makefile with the following command:
 
     ```sh
     make ISOBASEFILE=debian-12.0.0-amd64-DVD-1.iso
     ```
 
-4. Use the generated ISO file to install Debian with the pre-configured settings.
+5. Use the generated ISO file to install Debian with the pre-configured settings.
 
 ## How to update the Preseed File
 
